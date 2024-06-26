@@ -6,7 +6,7 @@ package com.flipkart.bean;
 /**
  * 
  */
-public class FlipfitCustomer {
+public class FlipfitCustomer extends User{
 	private String customerName;
 	private String customerAddress;
 	public String getCustomerName() {
