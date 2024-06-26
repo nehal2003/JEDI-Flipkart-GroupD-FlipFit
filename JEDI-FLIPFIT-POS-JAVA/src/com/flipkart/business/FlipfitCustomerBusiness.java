@@ -1,8 +1,12 @@
 
 package com.flipkart.business;
 
+import com.flipkart.bean.User;
 
 public class FlipfitCustomerBusiness {
+	public void registerCustomer(User Customer) {};
+	
+	public void updatePassword(User Customer, String password) {};
 	
 	public void viewGyms() {}
 

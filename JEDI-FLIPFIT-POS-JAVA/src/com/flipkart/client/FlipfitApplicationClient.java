@@ -18,6 +18,8 @@ public class FlipfitApplicationClient {
     	System.out.println("Press 2 for Registration of User");
     	System.out.println("Press 3 for Updating Password");
     	System.out.println("Press 4 to Exit");
+    	AdminClient service=new AdminClient();
+    	service.adminMenu();
 	}
 
 }
