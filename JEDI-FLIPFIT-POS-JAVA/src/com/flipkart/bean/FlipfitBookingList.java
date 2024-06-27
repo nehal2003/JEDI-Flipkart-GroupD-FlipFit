@@ -7,26 +7,96 @@ package com.flipkart.bean;
  * 
  */
 public class FlipfitBookingList {
-	private String customerID;
-	private String gymID;
-	private int slotNumber;
-	
-	public String getCustomerID() {
-		return customerID;
-	}
-	public void setCustomerID(String customerID) {
-		this.customerID = customerID;
-	}
-	public String getGymID() {
-		return gymID;
-	}
-	public void setGymID(String gymID) {
-		this.gymID = gymID;
-	}
-	public int getSlotNumber() {
-		return slotNumber;
-	}
-	public void setSlotNumber(int slotNumber) {
-		this.slotNumber = slotNumber;
-	}
+	 /**
+     * The unique identifier for the booking.
+     */
+    private String bookingID;
+
+    /**
+     * The user ID associated with the booking.
+     */
+    private String userID;
+
+    /**
+     * The schedule ID associated with the booking.
+     */
+    private String scheduleID;
+
+    /**
+     * Constructs a new booking with the given user ID and schedule ID.
+     *
+     * @param userID     The user ID associated with the booking.
+     * @param scheduleID The schedule ID associated with the booking.
+     */
+    public FlipfitBookingList(String userID, String scheduleID) {
+        this.userID = userID;
+        this.scheduleID = scheduleID;
+    }
+
+    /**
+     * Constructs a new booking with the given booking ID, user ID, and schedule ID.
+     *
+     * @param bookingID  The unique identifier for the booking.
+     * @param userID     The user ID associated with the booking.
+     * @param scheduleID The schedule ID associated with the booking.
+     */
+    public FlipfitBookingList(String bookingID, String userID, String scheduleID) {
+        this.bookingID = bookingID;
+        this.userID = userID;
+        this.scheduleID = scheduleID;
+    }
+
+    /**
+     * Gets the booking ID.
+     *
+     * @return The booking ID.
+     */
+    public String getBookingID() {
+        return bookingID;
+    }
+
+    /**
+     * Sets the booking ID.
+     *
+     * @param bookingID The unique identifier for the booking.
+     */
+    public void setBookingID(String bookingID) {
+        this.bookingID = bookingID;
+    }
+
+    /**
+     * Gets the user ID associated with the booking.
+     *
+     * @return The user ID.
+     */
+    public String getUserID() {
+        return userID;
+    }
+
+    /**
+     * Sets the user ID associated with the booking.
+     *
+     * @param userID The user ID.
+     */
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    /**
+     * Gets the schedule ID associated with the booking.
+     *
+     * @return The schedule ID.
+     */
+    public String getScheduleID() {
+        return scheduleID;
+    }
+
+    /**
+     * Sets the schedule ID associated with the booking.
+     *
+     * @param scheduleID The schedule ID.
+     */
+    public void setScheduleID(String scheduleID) {
+        this.scheduleID = scheduleID;
+    }
 }

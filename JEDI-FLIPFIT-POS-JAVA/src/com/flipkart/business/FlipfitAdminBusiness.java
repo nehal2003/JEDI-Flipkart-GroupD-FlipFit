@@ -3,24 +3,42 @@
  */
 package com.flipkart.business;
 
+import com.flipkart.dao.*;
+import com.flipkart.bean.FlipfitGymInformation;
+import com.flipkart.bean.FlipfitGymOwner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FlipfitAdminBusiness implements FlipfitAdminInterface {
-	public boolean approveGymOwnerRequest(int GymOwnerID) {
-		System.out.println("Approved Request");
-		return true;
-	};
-	public void viewPendingGymOwnerRequests() {
-		System.out.println("View Pending Request");
-	};
+	FlipfitAdminDAOInterface adminDAO  = new FlipfitAdminDAOImpl();
 
-	public void FlipfitGyms()
-	{
-		System.out.println("View FlipfitGyms");
-	}
+    private List<FlipfitGymOwner> pendinGymOwnerList = new ArrayList<>();
+    private List<FlipfitGymInformation> pendinGymCentreList = new ArrayList<>();
 
-	public void viewFlipfitCustomers()
-	{
-		System.out.println("View FlipfitCustomers");
-	}
+    public void approveGymCenter(String gymCentreId,int isApproved){
+        //takes GymCenter Object as input and return boolean
+//        System.out.println("Approved/Rejected Gym Center: ");
+        adminDAO.validateGymCentre(gymCentreId,isApproved);
+    }
+
+    public void approveGymOwner(String gymOwnerId,int isApprove){
+        //takes GymOwner Object as input and return boolean
+        adminDAO.validateGymOwner(gymOwnerId,isApprove);
+    }
+
+    public List<FlipfitGymInformation> viewPendingGymCentres(){
+        //views all pending requests
+        //System.out.println("Viewing pending Gym Center Approvals: ");
+        pendinGymCentreList = adminDAO.getPendingGymCentres();
+        return pendinGymCentreList;
+    }
+
+    public List<FlipfitGymOwner> viewPendingGymOwners(){
+        //views all pending requests
+        System.out.println("Viewing pending Gym Owner Approvals: ");
+        pendinGymOwnerList = adminDAO.getPendingGymOwners();
+        return pendinGymOwnerList;
+    }
 
 }

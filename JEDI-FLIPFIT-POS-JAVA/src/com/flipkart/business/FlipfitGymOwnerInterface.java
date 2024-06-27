@@ -3,19 +3,17 @@
  */
 package com.flipkart.business;
 
-import com.flipkart.bean.SlotDetails;
+import com.flipkart.bean.FlipfitGymOwner;
+
+import java.util.List;
 
 /**
  * 
  */
 public interface FlipfitGymOwnerInterface {
-	
-	public boolean registerGymOwner();
-	
-	public void addSlots(SlotDetails slot);
-
-	public void viewGymcentres();
-	
-	public void viewProfile(Integer gymOwnerID);
+	void requestGymOwnerApproval(String gymOwnerId);
+    List<FlipfitGymOwner> viewAllGymOwners();
+    FlipfitGymOwner loginGymOwner(String userId, String password);
+//    FlipfitGymOwner registerGymOwner(FlipfitGymOwner gymOwner);
 
 }
